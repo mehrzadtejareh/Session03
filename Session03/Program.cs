@@ -21,9 +21,9 @@ var app = builder.Build();
 app.UseMiddleware<RequestLoggingMiddleware>();
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/user/{code:nationalcode}", (string code) =>
+app.MapGet("/nationalCode/{code:nationalcode}", (string code) =>
 {
-    return Results.Ok($"کد ملی معتبر دریافت شد: {code}");
+    return Results.Ok($"کد ملی معتبر است: {code}");
 });
 
 app.Run();
